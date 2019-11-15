@@ -6,16 +6,16 @@
 */
 import { registerComponent } from 'direflow-project';
 
-registerComponent('cool-component')
-  .onMount((component) => handleComponent(component))
+registerComponent('future-form')
+  .onMount((component) => {
+    console.log(component);
+    // Do something with form
+  })
   .onFail((err) => console.warn(err));
 
-const handleComponent = (component) => {
-  component.todos = [
-    'Build a cool Web Component',
-    'Deploy the Web Component',
-    'Share it and use it',
-  ];
-
-  component.addEventListener('my-event', () => console.log('Alright! Very cool 😎'));
-};
+  registerComponent('future-inac-card')
+  .onMount((component) => {
+    console.log(component);
+    // Use to inactivate form from card
+  })
+  .onFail((err) => console.warn(err));
